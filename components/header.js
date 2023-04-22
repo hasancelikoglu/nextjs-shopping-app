@@ -3,7 +3,7 @@ import { IoBagOutline, IoPersonOutline } from "react-icons/io5";
 
 export default function Header() {
 	return (
-		<header className="py-5 px-14 flex justify-between items-center relative">
+		<header className="py-5 px-14 flex justify-between items-center w-full border-b">
 			<Link href="/" className="text-2xl font-bold">
 				APP
 			</Link>

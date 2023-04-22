@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
 		<html lang="tr">
 			<body className={`${inter.className} flex flex-col`}>
 				<Header />
-				<main className="container mx-auto">{children}</main>
+				<main className="mt-10">{children}</main>
 				<Footer />
 			</body>
 		</html>
