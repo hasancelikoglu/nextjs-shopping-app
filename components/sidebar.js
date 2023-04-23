@@ -1,3 +1,9 @@
+import Size from "./size";
+
 export default function Sidebar() {
-	return <aside className="bg-slate-300 w-2/6 sticky top-0 h-screen">sa</aside>;
+	return (
+		<aside className="sticky top-10 h-screen w-1/4 flex flex-col px-10">
+			<Size />
+		</aside>
+	);
 }
