@@ -14,9 +14,6 @@ export default function Header() {
 			</div>
 			<div className="flex items-center gap-x-8">
 				<Link href="/">
-					<IoPersonOutline size={22} />
-				</Link>
-				<Link href="/">
 					<IoBagOutline size={22} />
 				</Link>
 			</div>
