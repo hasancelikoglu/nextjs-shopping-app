@@ -1,15 +1,15 @@
 import ProductCard from "@/components/product-card";
+import store from "@/stores";
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+	const products = store.getState().products.products;
+
 	return (
 		<div className="w-full">
 			<div className="grid grid-cols-3">
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
+				{products.map((product) => (
+					<ProductCard key={product.id} product={product} />
+				))}
 			</div>
 		</div>
 	);
