@@ -1,5 +1,9 @@
 import HomePage from "@/containers/home";
 
-export default function Home() {
+import store from "@/stores";
+import { getProducts } from "@/stores/products";
+
+export default async function Home() {
+	await store.dispatch(getProducts());
 	return <HomePage />;
 }
