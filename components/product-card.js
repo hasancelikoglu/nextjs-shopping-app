@@ -1,10 +1,16 @@
 import Image from "next/image";
+import AddToCart from "./add-to-cart";
 
 export default function ProductCard({ product }) {
 	return (
 		<div className="m-3 cursor-pointer hover:scale-105 transition-all">
 			<div className="relative h-[350px]">
-				<Image src={product.productImage} fill className="object-cover" />
+				<Image
+					src={product.productImage}
+					fill
+					className="object-cover"
+					alt={product.title}
+				/>
 			</div>
 			<div className="mt-3">
 				<p className="text-xs opacity-60">Stok: 32</p>
@@ -16,9 +22,7 @@ export default function ProductCard({ product }) {
 				</div>
 				<div>{product.price} ₺</div>
 			</div>
-			<button className="text-white bg-black p-2 w-full mt-3">
-				Sepete ekle
-			</button>
+			<AddToCart product={product} />
 		</div>
 	);
 }
