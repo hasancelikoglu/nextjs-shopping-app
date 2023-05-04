@@ -13,7 +13,7 @@ export default function Header() {
 				<Link href="/">Çocuk</Link>
 			</div>
 			<div className="flex items-center gap-x-8">
-				<Link href="/">
+				<Link href="/cart">
 					<IoBagOutline size={22} />
 				</Link>
 			</div>
