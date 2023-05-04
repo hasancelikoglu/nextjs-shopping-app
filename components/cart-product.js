@@ -1,9 +1,10 @@
-import store from "@/stores";
 import { actions } from "@/stores/cart";
 import Image from "next/image";
 import { IoTrashOutline } from "react-icons/io5";
+import { useDispatch } from "react-redux";
 
 export default function CartProduct({ product }) {
+	const dispatch = useDispatch();
 	return (
 		<div className="h-48 drop-shadow shadow flex relative mb-5">
 			<div className="relative w-1/5 h-full">
@@ -24,7 +25,7 @@ export default function CartProduct({ product }) {
 				</p>
 			</div>
 			<div className="p-5 absolute right-0 flex flex-col h-full justify-between items-end">
-				<button>
+				<button onClick={() => dispatch(actions.removeFromCart(product))}>
 					<IoTrashOutline size={20} />
 				</button>
 				<div className="flex items-center gap-x-2">
@@ -36,7 +37,7 @@ export default function CartProduct({ product }) {
 							defaultValue={product.quantity}
 							min={1}
 							onChange={(e) =>
-								store.dispatch(
+								dispatch(
 									actions.setQuantity({
 										product,
 										quantity: parseInt(e.target.value),

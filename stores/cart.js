@@ -36,5 +36,12 @@ export const { reducer, actions } = createSlice({
 			}
 			product.quantity = action.payload.quantity;
 		},
+		removeFromCart: (state, action) => {
+			const price = parseFloat(
+				action.payload.price.replace(".", "").replace(",", ".")
+			);
+			state.cartTotal -= price * action.payload.quantity;
+			state.cart = state.cart.filter((p) => p.id !== action.payload.id);
+		},
 	},
 });
